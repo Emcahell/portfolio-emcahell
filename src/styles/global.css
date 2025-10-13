@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@theme {
+  --font-family-nunito: var(--family-nunito);
+  --font-family-roboto: var(--family-roboto);
+}
+
+:root {
+  --family-nunito: "Nunito", sans-serif;
+  --family-roboto: "Roboto", sans-serif;
+}
+
+/* Estilos del Switch */
+.switch {
+  --transition: 300ms;
+  --transition500: 500ms;
+  --color-dark: #0c1410d0;
+  --color-darkGray: #191d24;
+  --color-gray: #52555a;
+  --color-offwhite: #cecece48;
+  --shadow-color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: fit-content;
+  background-color: var(--color-dark);
+  border-radius: 30px;
+  padding: 4px;
+  transition: var(--transition500);
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 100;
+}
+
+/* Svg styles */
+.switch .svg {
+  transition: var(--transition);
+  position: absolute;
+  left: 5px;
+}
+
+.switch .moon {
+  width: 18px;
+  fill: var(--color-gray);
+  opacity: 1;
+}
+
+.switch .sun {
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  left: calc(100% - 21.5px);
+  top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scale: 0.8;
+  opacity: 0;
+}
+
+.switch .sun .dot {
+  position: relative;
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  background: rgba(255, 255, 255, 0.123);
+  z-index: 1;
+  box-shadow: 11px 0px 0px var(--shadow-color),
+    10.3px 0px 0px var(--shadow-color), -11px 0px 0px var(--shadow-color),
+    -10.3px 0px 0px var(--shadow-color), 0px -11px 0px var(--shadow-color),
+    0px -10.3px 0px var(--shadow-color), 0px 11px 0px var(--shadow-color),
+    0px 10.3px 0px var(--shadow-color), 8px 8px 0px var(--shadow-color),
+    7.3px 7.3px 0px var(--shadow-color), 8px -8px 0px var(--shadow-color),
+    7.3px -7.3px 0px var(--shadow-color), -8px -8px 0px var(--shadow-color),
+    -7.3px -7.3px 0px var(--shadow-color), -8px 8px 0px var(--shadow-color),
+    -7.3px 7.3px 0px var(--shadow-color);
+}
+
+.switch .sun .dot::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.219);
+  border: 2px solid var(--color-dark);
+}
+
+/*checkbox styles */
+.switch .circle {
+  appearance: none;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  padding: 12px;
+  border-radius: 50%;
+  left: 0;
+  background-color: var(--color-darkGray);
+  border: 1px solid var(--color-darkGray);
+  transition: var(--transition500);
+  box-shadow: 1px 1px 20px 3px var(--color-darkGray);
+}
+
+.switch:has(.circle:checked) {
+  background: var(--color-offwhite);
+}
+
+.switch .circle:hover {
+  margin-left: 3px;
+}
+
+.switch .circle:checked:hover {
+  margin-left: -3px;
+}
+
+.switch .circle:checked {
+  left: calc(100% - 24px);
+  background: rgba(255, 255, 255, 0.589);
+  border-color: rgba(255, 255, 255, 0.856);
+  box-shadow: 1px 1px 30px 12px rgba(255, 255, 255, 0.575);
+}
+
+.switch:has(.circle:checked)>.sun {
+  opacity: 1;
+}
+
+.switch:has(.circle:checked)>.moon {
+  opacity: 0;
+}
+
+
+/* ESTILOS PERSONALIZADOS PARA ANIMACIONES */
+/* ----------------------------------------- */
+/* Animación del borde para el boton */
+.btn-ani {
+  --thickness: 0.15rem;
+  --roundness: 0.75rem;
+  --color: #08dd7318;
+  --opacity: 0.8;
+  backdrop-filter: blur(100px);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-ani:hover {
+  background: rgba(5, 223, 114, 0.1);
+  filter: brightness(1.1);
+}
+
+.btn-ani:active {
+  --opacity: 0;
+  background: rgba(5, 223, 114, 0.05);
+}
+
+.btn-ani svg:first-of-type {
+  border-radius: var(--roundness);
+  display: block;
+  filter: url(#glow);
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.btn-ani .btn-rect {
+  fill: none;
+  stroke: var(--color);
+  stroke-width: var(--thickness);
+  rx: var(--roundness);
+  stroke-linejoin: round;
+  stroke-dasharray: 185%;
+  stroke-dashoffset: 80;
+  animation: snake 2s linear infinite;
+  animation-play-state: paused;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.btn-ani:hover .btn-rect {
+  animation-play-state: running;
+  opacity: var(--opacity);
+}
+
+@keyframes snake {
+  to {
+    stroke-dashoffset: 390%;
+  }
+}
+
+/* ------------------------------------------ */
+/* Animación de typewriter */
+@keyframes typing {
+
+  0.0000%,
+  24.6667% {
+    content: "";
+  }
+
+  1.3889%,
+  23.2778% {
+    content: "W";
+  }
+
+  2.7778%,
+  22.8889% {
+    content: "We";
+  }
+
+  3.1667%,
+  21.5000% {
+    content: "Web";
+  }
+
+  4.5556%,
+  20.1111% {
+    content: "Web ";
+  }
+
+  5.9444%,
+  19.7222% {
+    content: "Web D";
+  }
+
+  6.3333%,
+  18.3333% {
+    content: "Web De";
+  }
+
+  7.7222%,
+  17.9444% {
+    content: "Web Dev";
+  }
+
+  8.1111%,
+  16.5556% {
+    content: "Web Deve";
+  }
+
+  9.5000%,
+  15.1667% {
+    content: "Web Devel";
+  }
+
+  10.8889%,
+  14.7778% {
+    content: "Web Develo";
+  }
+
+  11.2778%,
+  13.3889% {
+    content: "Web Developer";
+  }
+
+  27.3333%,
+  61.0000% {
+    content: "";
+  }
+
+  28.7222%,
+  60.6111% {
+    content: "F";
+  }
+
+  29.1111%,
+  59.2222% {
+    content: "Fr";
+  }
+
+  30.5000%,
+  58.8333% {
+    content: "Fro";
+  }
+
+  31.8889%,
+  57.4444% {
+    content: "Fron";
+  }
+
+  32.2778%,
+  56.0556% {
+    content: "Front";
+  }
+
+  33.6667%,
+  55.6667% {
+    content: "Fronte";
+  }
+
+  34.0556%,
+  54.2778% {
+    content: "Fronten";
+  }
+
+  35.4444%,
+  53.8889% {
+    content: "Frontend";
+  }
+
+  36.8333%,
+  52.5000% {
+    content: "Frontend ";
+  }
+
+  37.2222%,
+  51.1111% {
+    content: "Frontend D";
+  }
+
+  38.6111%,
+  50.7222% {
+    content: "Frontend De";
+  }
+
+  39.0000%,
+  49.3333% {
+    content: "Frontend Dev";
+  }
+
+  40.3889%,
+  48.9444% {
+    content: "Frontend Deve";
+  }
+
+  41.7778%,
+  47.5556% {
+    content: "Frontend Devel";
+  }
+
+  42.1667%,
+  46.1667% {
+    content: "Frontend Develo";
+  }
+
+  43.5556%,
+  45.7778% {
+    content: "Frontend Developer";
+  }
+
+  64.6667%,
+  100.0000% {
+    content: "";
+  }
+
+  65.0556%,
+  99.9444% {
+    content: "S";
+  }
+
+  66.4444%,
+  98.5556% {
+    content: "So";
+  }
+
+  67.8333%,
+  97.1667% {
+    content: "Sof";
+  }
+
+  68.2222%,
+  96.7778% {
+    content: "Soft";
+  }
+
+  69.6111%,
+  95.3889% {
+    content: "Softw";
+  }
+
+  70.0000%,
+  94.0000% {
+    content: "Softwa";
+  }
+
+  71.3889%,
+  93.6111% {
+    content: "Softwar";
+  }
+
+  72.7778%,
+  92.2222% {
+    content: "Software";
+  }
+
+  73.1667%,
+  91.8333% {
+    content: "Software ";
+  }
+
+  74.5556%,
+  90.4444% {
+    content: "Software E";
+  }
+
+  75.9444%,
+  89.0556% {
+    content: "Software En";
+  }
+
+  76.3333%,
+  88.6667% {
+    content: "Software Eng";
+  }
+
+  77.7222%,
+  87.2778% {
+    content: "Software Engi";
+  }
+
+  78.1111%,
+  86.8889% {
+    content: "Software Engin";
+  }
+
+  79.5000%,
+  85.5000% {
+    content: "Software Engine";
+  }
+
+  80.8889%,
+  84.1111% {
+    content: "Software Enginee";
+  }
+
+  81.2778%,
+  83.7222% {
+    content: "Software Engineer";
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.typewriter {
+  --caret: currentcolor;
+  position: relative;
+}
+
+.typewriter::before {
+  content: "";
+  animation: typing 18s infinite;
+  color: #10b981;
+}
+
+.typewriter::after {
+  content: "";
+  border-right: 2px solid var(--caret);
+  animation: blink 0.8s ease-in-out infinite;
+  margin-left: 2px;
+}
+
+/* Para reducir movimiento en usuarios que lo prefieren */
+@media (prefers-reduced-motion) {
+  .typewriter::after {
+    animation: none;
+    border-right: 0;
+  }
+
+  @keyframes sequencePopup {
+
+    0%,
+    33% {
+      content: "Web Developer";
+    }
+
+    34%,
+    66% {
+      content: "Frontend Developer";
+    }
+
+    67%,
+    100% {
+      content: "Software Engineer";
+    }
+  }
+
+  .typewriter::before {
+    content: "Web Developer";
+    animation: sequencePopup 18s linear infinite;
+  }
+}

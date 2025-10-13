@@ -1,0 +1,54 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+		<meta name="description" content="Portfolio Emmanuel Castro" />
+		<meta name="keywords" content="Portfolio, Emcahell, Developer" />
+		<meta name="author" content="Emcahell" />
+		<title>Portfolio Emcahell</title>
+		<script is:inline>
+			const theme = (() => {
+				if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+					return localStorage.getItem('theme');
+				}
+			})();
+			document.documentElement.classList.toggle('dark', theme === 'dark');
+		</script>
+	</head>
+	<body class='min-h-screen flex flex-col justify-start items-center px-4 sm:px-6 md:px-11 py-12 md:py-11 gap-14'>
+		<div class="fixed top-0 z-[-2] h-screen w-screen bg-emerald-100/10 dark:bg-neutral-950 bg-[radial-gradient(ellipse_100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]"></div>
+		<slot />
+
+		<script>
+      import { translations, type TranslationKey } from '../i18n/translations.ts';
+
+      function getTranslation(lang: string, key: TranslationKey): string {
+        if (translations[lang] && translations[lang][key]) {
+          return translations[lang][key]!; 
+        }
+        return translations['en'][key] || key;
+      }
+
+      function applyTranslations() {
+        const lang = (navigator.language || navigator.language).split('-')[0];
+        const targetLang = lang === 'es' ? 'es' : 'en';
+
+        document.documentElement.lang = targetLang;
+
+        const elements: NodeListOf<HTMLElement> = document.querySelectorAll('[data-translate-key]');
+        elements.forEach(element => {
+          const key = element.getAttribute('data-translate-key') as TranslationKey;
+          element.textContent = getTranslation(targetLang, key);
+        });
+      }
+
+      applyTranslations();
+    </script>
+	</body>
+</html>
