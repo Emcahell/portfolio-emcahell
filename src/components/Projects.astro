@@ -1,135 +1,98 @@
 ---
 import Card from '../components/ui/Card.astro';
+import CardProject from '../components/ui/CardProject.astro';
 import ImgEnrolmentStatistics from '../assets/estadistica-matricula.webp';
 import ImgStatesVzla from '../assets/estados-vzla-webpage.webp';
 import ImgDistrictPanem from '../assets/distritos-panem.webp';
 import ImgTop from '../assets/top-webpage.webp';
+import ImgKefren from '../assets/web-kefren-art.webp';
+import { translations } from '../i18n/translations';
+
+const projects = [
+  {
+    image: ImgEnrolmentStatistics,
+    alt: 'Proyecto Estadistica de Matrícula',
+    href: 'https://estadisticadematricula.vercel.app/',
+    title: 'Estadistica de matricula',
+    descriptionKey: 'projectStatistics',
+    badges: [
+      { src: 'https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white', alt: 'HTML' },
+      { src: 'https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white', alt: 'CSS' },
+      { src: 'https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E', alt: 'JavaScript' },
+    ],
+  },
+  {
+    image: ImgStatesVzla,
+    alt: 'Proyecto Estados de Venezuela',
+    href: 'https://estados-vzla.vercel.app/',
+    title: 'Estados de Venezuela',
+    descriptionKey: 'projectStatesVzla',
+    badges: [
+      { src: 'https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB', alt: 'React' },
+      { src: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white', alt: 'Tailwind' },
+    ],
+  },
+  {
+    image: ImgDistrictPanem,
+    alt: 'Proyecto Distritos de Panem',
+    href: 'https://districts-of-panem.vercel.app/',
+    title: 'Distritos de Panem',
+    descriptionKey: 'projectDistrictsPanem',
+    badges: [
+      { src: 'https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white', alt: 'Astro' },
+      { src: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white', alt: 'Tailwind' },
+    ],
+  },
+  {
+    image: ImgKefren,
+    alt: 'Proyecto Kefren Art portfolio',
+    href: 'https://kefren-art.vercel.app',
+    title: 'Portafolio Kefren Art',
+    descriptionKey: 'projectKefren',
+    badges: [
+    { src: 'https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white', alt: 'Astro' },
+    { src: 'https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB', alt: 'React' },
+    { src: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white', alt: 'Tailwind' },
+    ],
+  },
+  {
+    image: ImgTop,
+    alt: 'Proyecto Twenty One Pilots',
+    href: 'https://welcome-to-the-world-of-twenty-one-pilots.vercel.app/',
+    title: 'Twenty One Pilots',
+    descriptionKey: 'projectTop',
+    badges: [
+      { src: 'https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white', alt: 'HTML' },
+      { src: 'https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white', alt: 'CSS' },
+      { src: 'https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E', alt: 'JavaScript' },
+    ],
+  },
+];
 ---
 
 <Card>
   <main class="p-4 sm:p-8">
     <div class='mb-8'>
-      <p class='text-lg text-emerald-950 dark:text-emerald-100 font-family-nunito tracking-wide font-bold' data-translate-key='projects'>Mis Proyectos</p>
+      <p class='text-lg text-emerald-950 dark:text-emerald-100 font-family-nunito tracking-wide font-bold' data-translate-key='projects'>
+        Mis Proyectos
+      </p>
     </div>
     <section class="flex flex-col gap-8">
-      <article>
-        <Card>
-          <div class='flex flex-col p-6 gap-4'>
-            <div class="relative overflow-hidden rounded-xl">
-              <img class="w-[500px] rounded-xl hover:scale-105 transition" src={ImgEnrolmentStatistics.src} alt="Enrolment Statistic Project">
-              <a href="https://estadisticadematricula.vercel.app/" target="_blank" class='absolute bottom-0 flex justify-between bg-gradient-to-t from-black/40 to-transparent text-white font-bold tracking-wide rounded-b-xl backdrop-blur-sm w-full px-4 py-2 sm:py-4'>
-                <span class="text-md sm:text-xl font-family-nunito">
-                  Estadistica de matricula
-                </span>
-                <svg           
-                width="20"
-                height="20"
-                viewBox="0 0 496 512"
-                fill="white"
-                stroke="currentColor"
-                class="w-4 md:w-10"
-                ><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-              </a>
-            </div>
-            <div>
-              <p class="max-w-[500px] text-sm sm:text-lg text-emerald-950 dark:text-emerald-100 font-family-roboto font-normal tracking-wide" data-translate-key='projectStatistics'>Una SPA para obtener el promedio y porcentaje de asistencia de la matricula escolar mensual.</p>
-            </div>
-            <div class="flex sm:gap-4">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
-            </div>
-          </div>
-        </Card>
-      </article>
-      <article>
-        <Card>
-          <div class='flex flex-col p-6 gap-4'>
-            <div class="relative overflow-hidden rounded-xl">
-              <img class="w-[500px] rounded-xl hover:scale-105 transition" src={ImgStatesVzla.src} alt="Enrolment Statistic Project">
-              <a href="https://estados-vzla.vercel.app/" target="_blank" class='absolute bottom-0 flex justify-between bg-gradient-to-t from-black/40 to-transparent text-white font-bold tracking-wide rounded-b-xl backdrop-blur-sm w-full px-4 py-2 sm:py-4'>
-                <span class="text-md sm:text-xl font-family-nunito">
-                  Estados de Venezuela
-                </span>
-                <svg           
-                width="20"
-                height="20"
-                viewBox="0 0 496 512"                
-                fill="white"
-                stroke="currentColor"
-                class="w-4 md:w-10"
-                ><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-              </a>
-            </div>
-            <div>
-              <p class="max-w-[500px] text-sm sm:text-lg text-emerald-950 dark:text-emerald-100 font-family-roboto font-normal tracking-wide" data-translate-key='projectStatesVzla'>Conoce los estados de Venezuela y sus datos relevantes, busca por estado y guarda tus favoritos.</p>
-            </div>
-            <div class="flex sm:gap-4">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
-            </div>
-          </div>
-        </Card>
-      </article>
-      <article>
-        <Card>
-          <div class='flex flex-col p-6 gap-4'>
-            <div class='relative overflow-hidden rounded-xl'>
-              <img class="w-[500px] rounded-xl hover:scale-105 transition" src={ImgDistrictPanem.src} alt="Enrolment Statistic Project">
-              <a href="https://districts-of-panem.vercel.app/" target="_blank" class='absolute bottom-0 flex justify-between bg-gradient-to-t from-black/30 to-transparent text-white font-bold tracking-wide rounded-b-xl backdrop-blur-sm w-full px-4 py-2 sm:py-4'>
-                <span class="text-md sm:text-xl font-family-nunito">
-                  Distritos de Panem
-                </span>
-                <svg           
-                width="20"
-                height="20"
-                viewBox="0 0 496 512"
-                fill="white"
-                stroke="currentColor"
-                class="w-4 md:w-10"
-                ><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-              </a>
-            </div>
-            <div>
-              <p class="max-w-[500px] text-sm sm:text-lg text-emerald-950 dark:text-emerald-100 font-family-roboto font-normal tracking-wide" data-translate-key='projectDistrictsPanem'>Sitio Web para conocer a los 12 distritos de Panem, su ubicación, su industria y sus vencedores.</p>
-            </div>
-            <div class="flex sm:gap-4">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white" alt="Astro">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind">
-            </div>
-          </div>
-        </Card>
-      </article>
-      <article>
-        <Card>
-          <div class='flex flex-col p-6 gap-4'>
-            <div class='relative overflow-hidden rounded-xl'>
-              <img class="w-[500px] rounded-xl hover:scale-105 transition" src={ImgTop.src} alt="Enrolment Statistic Project">
-              <a href="https://welcome-to-the-world-of-twenty-one-pilots.vercel.app/" target="_blank" class='absolute bottom-0 flex justify-between bg-gradient-to-t from-black/30 to-transparent text-white font-bold tracking-wide rounded-b-xl backdrop-blur-sm w-full px-4 py-2 sm:py-4'>
-                <span class="text-md sm:text-xl font-family-nunito">
-                  Twenty One Pilots
-                </span>
-                <svg           
-                width="20"
-                height="20"
-                viewBox="0 0 496 512"                
-                fill="white"
-                stroke="currentColor"
-                class="w-4 md:w-10"
-                ><path d="M320 0c-17.7 0-32 14.3-32 32s14.3 32 32 32l82.7 0L201.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L448 109.3l0 82.7c0 17.7 14.3 32 32 32s32-14.3 32-32l0-160c0-17.7-14.3-32-32-32L320 0zM80 32C35.8 32 0 67.8 0 112L0 432c0 44.2 35.8 80 80 80l320 0c44.2 0 80-35.8 80-80l0-112c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 112c0 8.8-7.2 16-16 16L80 448c-8.8 0-16-7.2-16-16l0-320c0-8.8 7.2-16 16-16l112 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L80 32z"/></svg>
-              </a>
-            </div>
-            <div>
-              <p class="max-w-[500px] text-sm sm:text-lg text-emerald-950 dark:text-emerald-100 font-family-roboto font-normal tracking-wide" data-translate-key='projectTop'>Sitio Web con información sobre Twenty One Pilots, origen de la banda, albums (con sus eras), lore y algunas curiosidades sobre sus integrantes.</p>
-            </div>
-            <div class="flex sm:gap-4">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS">
-              <img class="rounded-2xl opacity-80 scale-75 sm:scale-100" src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript">
-            </div>
-          </div>
-        </Card>
-      </article>
+      {projects.map(project => (
+        <article>
+          <Card>
+            <CardProject 
+              image={project.image}
+              alt={project.alt}
+              href={project.href}
+              title={project.title}
+              descriptionKey={project.descriptionKey}
+              description={translations.es[project.descriptionKey] ?? ''}
+              badges={project.badges}
+            />
+          </Card>
+        </article>
+      ))}
     </section>
   </main>
 </Card>
