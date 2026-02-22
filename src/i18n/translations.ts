@@ -14,6 +14,7 @@ export const translations: Translations = {
     projectDistrictsPanem: 'Web site to know the 12 districts of Panem, their location, their industry and their victors.',
     projectTop: 'Web site with information about Twenty One Pilots, their origin, albums (with their eras), lore and some interesting facts about their members.',
     projectKefren: 'Portfolio for Kefren Art, a digital artist. It shows his work, his social networks and contact information.',
+    projectOneStarlink: 'Landing page for One Starlink, it shows information about products and services they offer.',
     skills: 'My Skills',
   },
   es: {
@@ -25,6 +26,7 @@ export const translations: Translations = {
     projectDistrictsPanem: 'Sitio Web para conocer a los 12 distritos de Panem, su ubicación, su industria y sus vencedores.',
     projectTop: 'Sitio Web con información sobre Twenty One Pilots, origen de la banda, albums (con sus eras), lore y algunas curiosidades sobre sus integrantes.',
     projectKefren: 'Portafolio para Kefren Art, un artista digital. Muestra sus trabajos, sus redes sociales e información de contacto.',
+    projectOneStarlink: 'Landing page para One Starlink, muestra información sobre productos y servicios que ofrecen.',
     skills: 'Mis Habilidades',
   },
 };
