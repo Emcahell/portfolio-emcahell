@@ -1,94 +1,165 @@
 ---
-import Card from '../components/ui/Card.astro';
-import CardProject from '../components/ui/CardProject.astro';
-import ImgEnrolmentStatistics from '../assets/estadistica-matricula.webp';
-import ImgStatesVzla from '../assets/estados-vzla-webpage.webp';
-import ImgOptimizeImg from '../assets/optimizeimg.webp';
-import ImgDistrictPanem from '../assets/distritos-panem.webp';
-import ImgTop from '../assets/top-webpage.webp';
-import ImgKefren from '../assets/web-kefren-art.webp';
-import ImgOneStarlink from '../assets/one-starlink.webp';
-import { translations } from '../i18n/translations';
+import Card from "../components/ui/Card.astro";
+import CardProject from "../components/ui/CardProject.astro";
+import ImgEnrolmentStatistics from "../assets/estadistica-matricula.webp";
+import ImgStatesVzla from "../assets/estados-vzla-webpage.webp";
+import ImgOptimizeImg from "../assets/optimizeimg.webp";
+import ImgDistrictPanem from "../assets/distritos-panem.webp";
+import ImgTop from "../assets/top-webpage.webp";
+import ImgKefren from "../assets/web-kefren-art.webp";
+import ImgOneStarlink from "../assets/one-starlink.webp";
+import ImgChatIAEmma from "../assets/chat-AI-emma.png";
+import { translations } from "../i18n/translations";
 
 const projects = [
   {
     image: ImgEnrolmentStatistics,
-    alt: 'Proyecto Estadistica de Matrícula',
-    href: 'https://estadisticadematricula.vercel.app/',
-    title: 'Estadistica de matricula',
-    descriptionKey: 'projectStatistics',
+    alt: "Proyecto Estadistica de Matrícula",
+    href: "https://estadisticadematricula.vercel.app/",
+    title: "Estadistica de matricula",
+    descriptionKey: "projectStatistics",
     badges: [
-      { src: 'https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white', alt: 'HTML' },
-      { src: 'https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white', alt: 'CSS' },
-      { src: 'https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E', alt: 'JavaScript' },
+      {
+        src: "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white",
+        alt: "HTML",
+      },
+      {
+        src: "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white",
+        alt: "CSS",
+      },
+      {
+        src: "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E",
+        alt: "JavaScript",
+      },
     ],
   },
   {
     image: ImgStatesVzla,
-    alt: 'Proyecto Estados de Venezuela',
-    href: 'https://estados-vzla.vercel.app/',
-    title: 'Estados de Venezuela',
-    descriptionKey: 'projectStatesVzla',
+    alt: "Proyecto Estados de Venezuela",
+    href: "https://estados-vzla.vercel.app/",
+    title: "Estados de Venezuela",
+    descriptionKey: "projectStatesVzla",
     badges: [
-      { src: 'https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB', alt: 'React' },
-      { src: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white', alt: 'Tailwind' },
+      {
+        src: "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
+        alt: "React",
+      },
+      {
+        src: "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
+        alt: "Tailwind",
+      },
     ],
   },
   {
     image: ImgOptimizeImg,
-    alt: 'Proyecto Optimize Image',
-    href: 'https://optimizeimg.vercel.app/',
-    title: 'Optimize Image',
-    descriptionKey: 'Web para optimizar imágenes, comprimiendolas y cambiando a formato a WebP.',
+    alt: "Proyecto Optimize Image",
+    href: "https://optimizeimg.vercel.app/",
+    title: "Optimize Image",
+    descriptionKey:
+      "projectOptimizeImage",
     badges: [
-      { src: 'https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white', alt: 'Next' },
-      { src: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white', alt: 'Tailwind' },
+      {
+        src: "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
+        alt: "Next",
+      },
+      {
+        src: "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
+        alt: "Tailwind",
+      },
+    ],
+  },
+  {
+    image: ImgChatIAEmma,
+    alt: "Proyecto chatbot ia",
+    href: "https://chat-ia-emma.vercel.app/",
+    title: "Chat IA Emma",
+    descriptionKey:
+      "projectChatIaEmma",
+    badges: [
+      {
+        src: "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
+        alt: "Next",
+      },
+      {
+        src: "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
+        alt: "Tailwind",
+      },
+    ],
+  },
+  {
+    image: ImgOneStarlink,
+    alt: "Landing page One Starlink",
+    href: "https://one-starlink.vercel.app/",
+    title: "One Starlink",
+    descriptionKey: "projectOneStarlink",
+    badges: [
+      {
+        src: "https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white",
+        alt: "Next",
+      },
+      {
+        src: "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
+        alt: "Tailwind",
+      },
     ],
   },
   {
     image: ImgDistrictPanem,
-    alt: 'Proyecto Distritos de Panem',
-    href: 'https://districts-of-panem.vercel.app/',
-    title: 'Distritos de Panem',
-    descriptionKey: 'projectDistrictsPanem',
+    alt: "Proyecto Distritos de Panem",
+    href: "https://districts-of-panem.vercel.app/",
+    title: "Distritos de Panem",
+    descriptionKey: "projectDistrictsPanem",
     badges: [
-      { src: 'https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white', alt: 'Astro' },
-      { src: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white', alt: 'Tailwind' },
-    ],
-  },
-    {
-    image: ImgOneStarlink,
-    alt: 'Landing page One Starlink',
-    href: 'https://one-starlink.vercel.app/',
-    title: 'One Starlink',
-    descriptionKey: 'projectOneStarlink',
-    badges: [
-      { src: 'https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white', alt: 'Next', },
-      { src: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white', alt: 'Tailwind' },
+      {
+        src: "https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white",
+        alt: "Astro",
+      },
+      {
+        src: "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
+        alt: "Tailwind",
+      },
     ],
   },
   {
     image: ImgKefren,
-    alt: 'Proyecto Kefren Art portfolio',
-    href: 'https://kefren-art.vercel.app',
-    title: 'Portafolio Kefren Art',
-    descriptionKey: 'projectKefren',
+    alt: "Proyecto Kefren Art portfolio",
+    href: "https://kefren-art.vercel.app",
+    title: "Portafolio Kefren Art",
+    descriptionKey: "projectKefren",
     badges: [
-    { src: 'https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white', alt: 'Astro' },
-    { src: 'https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB', alt: 'React' },
-    { src: 'https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white', alt: 'Tailwind' },
+      {
+        src: "https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white",
+        alt: "Astro",
+      },
+      {
+        src: "https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB",
+        alt: "React",
+      },
+      {
+        src: "https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white",
+        alt: "Tailwind",
+      },
     ],
   },
   {
     image: ImgTop,
-    alt: 'Proyecto Twenty One Pilots',
-    href: 'https://welcome-to-the-world-of-twenty-one-pilots.vercel.app/',
-    title: 'Twenty One Pilots',
-    descriptionKey: 'projectTop',
+    alt: "Proyecto Twenty One Pilots",
+    href: "https://welcome-to-the-world-of-twenty-one-pilots.vercel.app/",
+    title: "Twenty One Pilots",
+    descriptionKey: "projectTop",
     badges: [
-      { src: 'https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white', alt: 'HTML' },
-      { src: 'https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white', alt: 'CSS' },
-      { src: 'https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E', alt: 'JavaScript' },
+      {
+        src: "https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white",
+        alt: "HTML",
+      },
+      {
+        src: "https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white",
+        alt: "CSS",
+      },
+      {
+        src: "https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E",
+        alt: "JavaScript",
+      },
     ],
   },
 ];
@@ -96,27 +167,31 @@ const projects = [
 
 <Card>
   <main class="p-4 sm:p-8">
-    <div class='mb-8'>
-      <p class='text-lg text-emerald-950 dark:text-emerald-100 font-family-nunito tracking-wide font-bold' data-translate-key='projects'>
+    <div class="mb-8">
+      <p
+        class="text-lg text-emerald-950 dark:text-emerald-100 font-family-nunito tracking-wide font-bold"
+        data-translate-key="projects">
         Mis Proyectos
       </p>
     </div>
     <section class="flex flex-col gap-8">
-      {projects.map(project => (
-        <article>
-          <Card>
-            <CardProject 
-              image={project.image}
-              alt={project.alt}
-              href={project.href}
-              title={project.title}
-              descriptionKey={project.descriptionKey}
-              description={translations.es[project.descriptionKey] ?? ''}
-              badges={project.badges}
-            />
-          </Card>
-        </article>
-      ))}
+      {
+        projects.map((project) => (
+          <article>
+            <Card>
+              <CardProject
+                image={project.image}
+                alt={project.alt}
+                href={project.href}
+                title={project.title}
+                descriptionKey={project.descriptionKey}
+                description={translations.es[project.descriptionKey] ?? ""}
+                badges={project.badges}
+              />
+            </Card>
+          </article>
+        ))
+      }
     </section>
   </main>
 </Card>
