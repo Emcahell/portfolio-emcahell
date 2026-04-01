@@ -1,17 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import AboutMe from '../components/AboutMe.astro';
-import Projects from '../components/Projects.astro';
-import Skills from '../components/Skills.astro';
-import Footer from '../components/Footer.astro';
-import SwitchMode from '../components/ui/SwitchMode.astro';
-
+import Layout from "../layouts/Layout.astro";
+import AboutMe from "../components/AboutMe.astro";
+import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills.astro";
+import Footer from "../components/Footer.astro";
+import SwitchMode from "../components/ui/SwitchMode.astro";
 ---
 
 <Layout>
-	<SwitchMode />
-	<AboutMe />
-	<Projects />
-	<Skills />
-	<Footer />
+  <SwitchMode />
+  <section class="flex flex-col md:flex-row justify-center items-center gap-8 md:h-screen px-4">
+    <div class="md:h-[calc(100vh-4rem)] flex flex-col justify-start gap-8">
+      <AboutMe />
+      <div class="hidden md:block">
+        <Skills />
+      </div>
+    </div>
+    <div class="md:h-auto flex-col justify-center">
+      <Projects />
+    </div>
+    <div class="md:h-[calc(100vh-4rem)] flex flex-col justify-start gap-8 md:hidden">
+      <Skills />
+    </div>
+  </section>
+  <Footer />
 </Layout>
