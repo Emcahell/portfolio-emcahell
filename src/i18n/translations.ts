@@ -9,6 +9,7 @@ export const translations: Translations = {
     downloadCV: "Download CV",
     greeting: "I'm a",
     projects: "My Projects",
+    aboutMe: "I'm a self-taught web developer with a passion for learning and creating. I enjoy working on projects that allow me to solve problems and create something useful for others.",
     projectStatistics:
       "An SPA to get the average and percentage of attendance of the monthly school enrollment.",
     projectStatesVzla:
@@ -31,6 +32,7 @@ export const translations: Translations = {
     downloadCV: "Descargar CV",
     greeting: "Soy un",
     projects: "Mis Proyectos",
+    aboutMe: "Soy un desarrollador web autodidacta con pasión por aprender y crear. Disfruto trabajando en proyectos que me permiten crear algo útil para los demás.",
     projectStatistics:
       "Una SPA para obtener el promedio y porcentaje de asistencia de la matricula escolar mensual.",
     projectStatesVzla:

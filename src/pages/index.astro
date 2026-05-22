@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import AboutMe from "../components/AboutMe.astro";
+import AboutMe2 from "../components/AboutMe2.astro";
 import Projects from "../components/Projects.astro";
 import Skills from "../components/Skills.astro";
 import Footer from "../components/Footer.astro";
@@ -10,8 +11,9 @@ import SwitchMode from "../components/ui/SwitchMode.astro";
 <Layout>
   <SwitchMode />
   <section class="flex flex-col md:flex-row justify-center items-center gap-8 md:h-screen px-4">
-    <div class="md:h-[calc(100vh-4rem)] flex flex-col justify-start gap-8">
+    <div class="md:h-[calc(100vh-4rem)] w-full lg:w-auto flex flex-col justify-between gap-6">
       <AboutMe />
+      <AboutMe2 />
       <div class="hidden md:block">
         <Skills />
       </div>
