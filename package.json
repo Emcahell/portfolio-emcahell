@@ -12,6 +12,8 @@
     "@astrojs/react": "^4.4.0",
     "@astrojs/sitemap": "^3.6.0",
     "@astrojs/tailwind": "^6.0.2",
+    "@boxicons/react": "^1.0.3",
+    "@lucide/astro": "^1.16.0",
     "@tailwindcss/postcss": "^4.1.14",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
