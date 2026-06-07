@@ -27,6 +27,10 @@ export const translations: Translations = {
       "Chatbot with an artificial intelligence capable of responding in Venezuelan dialect.",
     projectOptimizeImage:
       "Page Web for optimizing images, compressing them, and changing their format to WebP.",
+    projectWhatsaiup:
+      "Web to chat with AI models through api key, inspired by WhatsApp with style of Material Symbols.",
+    projectCountdownSOTR:
+      "Countdown to the premiere of The Hunger Games: Dawn on Harvest.",
     skills: "My Skills",
   },
   es: {
@@ -51,6 +55,10 @@ export const translations: Translations = {
       "Chatbot con inteligencia artificial que responde con dialecto venezolano.",
     projectOptimizeImage:
       "Pagina Web para optimizar imágenes, comprimiendolas y cambiando su formato a WebP.",
+    projectWhatsaiup:
+      "Web para chatear con modelos de IA mediante api key, inspirada en WhatsApp con estilo de Material Symbols.",
+    projectCountdownSOTR:
+      "Cuenta regresiva para el estreno de Los Juegos del Hambre: Amanecer en la Cosecha.",
     skills: "Mis Habilidades",
   },
 };
